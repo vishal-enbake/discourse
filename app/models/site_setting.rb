@@ -161,7 +161,7 @@ class SiteSetting < ActiveRecord::Base
 
   setting(:enforce_global_nicknames, true)
   setting(:discourse_org_access_key, '')
-  
+
   setting(:enable_s3_uploads, false)
   setting(:s3_access_key_id, '')
   setting(:s3_secret_access_key, '')
@@ -186,6 +186,10 @@ class SiteSetting < ActiveRecord::Base
   setting(:regular_requires_likes_received, 1)
   setting(:regular_requires_likes_given, 1)
   setting(:regular_requires_topic_reply_count, 3)
+
+  # Reply by Email Settings
+  setting(:reply_by_email_enabled, false)
+  setting(:reply_by_email_address, nil)
 
   # Entropy checks
   setting(:title_min_entropy, 10)
