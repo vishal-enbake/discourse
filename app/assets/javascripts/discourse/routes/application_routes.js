@@ -30,8 +30,12 @@ Discourse.Route.buildRoutes(function() {
     });
 
     // the homepage is the first item of the 'top_menu' site setting
-    var homepage = PreloadStore.get('siteSettings').top_menu.split("|")[0].split(",")[0];
-    this.route(homepage, { path: '/' });
+    var siteSettings = PreloadStore.get('siteSettings');
+
+    if (siteSettings) {
+      var homepage = siteSettings.top_menu.split("|")[0].split(",")[0];
+      this.route(homepage, { path: '/' });
+    }
 
     this.route('categories', { path: '/categories' });
     this.route('category', { path: '/category/:slug/more' });

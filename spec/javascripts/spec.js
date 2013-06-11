@@ -9,10 +9,11 @@
 // Externals we need to load first
 //= require ../../app/assets/javascripts/external/jquery-1.9.1.js
 
+//= require hacks
 //= require ../../app/assets/javascripts/external/jquery.ui.widget.js
 //= require ../../app/assets/javascripts/external/handlebars-1.0.rc.4.js
-//= require ../../app/assets/javascripts/external_production/ember.js
-//= require ../../app/assets/javascripts/external_production/group-helper.js
+//= require ../../app/assets/javascripts/external_development/ember.js
+//= require ../../app/assets/javascripts/external_development/group-helper.js
 
 //= require ../../app/assets/javascripts/locales/i18n
 //= require ../../app/assets/javascripts/locales/date_locales.js
@@ -28,24 +29,13 @@
 //= require ../../app/assets/javascripts/discourse
 
 // Stuff we need to load first
-//= require_tree ../../app/assets/javascripts/discourse/mixins
-//= require ../../app/assets/javascripts/discourse/components/debounce
-//= require ../../app/assets/javascripts/discourse/controllers/controller
-//= require ../../app/assets/javascripts/discourse/views/modal/modal_body_view
-//= require ../../app/assets/javascripts/discourse/models/model
-//= require ../../app/assets/javascripts/discourse/routes/discourse_route
+//= require main_include
 
-//= require_tree ../../app/assets/javascripts/discourse/controllers
-//= require_tree ../../app/assets/javascripts/discourse/components
-//= require_tree ../../app/assets/javascripts/discourse/models
-//= require_tree ../../app/assets/javascripts/discourse/views
-//= require_tree ../../app/assets/javascripts/discourse/helpers
-//= require_tree ../../app/assets/javascripts/discourse/templates
-//= require_tree ../../app/assets/javascripts/discourse/routes
-//= require_tree ../../app/assets/javascripts/admin/models
+//= require admin
 
 //= require_tree ../../app/assets/javascripts/defer
 
+
 //= require_tree .
 
-//= require hacks
+
