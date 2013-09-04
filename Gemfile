@@ -151,6 +151,8 @@ gem 'redis-rack-cache', git: 'https://github.com/SamSaffron/redis-rack-cache.git
 gem 'rack-cache', require: false
 
 gem 'rack-cors', require: false
+gem 'debugger'
+gem 'minitest'
 
 # perftools only works on 1.9 atm
 group :profile do
@@ -159,3 +161,5 @@ group :profile do
   # if you need to profile, uncomment out this line
   # gem 'rack-perftools_profiler', require: 'rack/perftools_profiler', platform: :mri_19
 end
+gem 'localtunnel'
+gem 'koala'

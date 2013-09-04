@@ -24,6 +24,9 @@
   <body>
     <!--[if IE 9]><script type="text/javascript">ie = "new";</script><![endif]-->
 
+  <% if params[:controller] == "categories" && params[:action] =="get_fb_token"%>
+  <%= @user_name%>
+  <%end%>
     <%=SiteCustomization.custom_header(session[:preview_style])%>
     <section id='main'>
       <noscript data-path="<%= request.env['PATH_INFO'] %>">

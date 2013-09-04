@@ -11,7 +11,17 @@
 <p><%= t 'powered_by_html' %></p>
 
 <% if @category %>
-  <% content_for :head do %>
-    <%= auto_discovery_link_tag(@category, {action: :category_feed, format: :rss}, title: t('rss_topics_in_category', category: @category.name), type: 'application/rss+xml') %>
+  <% form_tag complete_tasks_path, :method => :put do %>
+    <ul>
+    <% for labels in @categories %>
+      <li>
+        <%= check_box_tag "labels_ids[]", label.id %>
+        <%= label.name %>
+      </li>
+    <% end %>
+    </ul>
+    <%= submit_tag "Item Selected" %>
   <% end %>
+
+
 <% end %>

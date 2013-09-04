@@ -151,10 +151,18 @@ Discourse::Application.routes.draw do
   get 'p/:post_id/:user_id' => 'posts#short_link'
 
   resources :notifications
-  resources :categories
-
+  resources :categories do
+    collection do
+      get 'connect_facebook'
+      get 'get_fb_token'
+    end
+  end
+  
   match "/auth/:provider/callback", to: "users/omniauth_callbacks#complete"
   match "/auth/failure", to: "users/omniauth_callbacks#failure"
+  get '/test_page' => 'home#test_page'
+  #get '/get_fb_token' => 'categories#get_fb_token'
+
 
   resources :clicks do
     collection do
@@ -253,5 +261,5 @@ Discourse::Application.routes.draw do
   end
   # special case for categories
   root to: "categories#index", constraints: HomePageConstraint.new("categories")
-
+  
 end

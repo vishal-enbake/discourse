@@ -31,7 +31,7 @@ Discourse.AdminEmailIndexController = Discourse.Controller.extend(Discourse.Pres
     @method sendTestEmail
   **/
   sendTestEmail: function() {
-    this.set('sentTestEmail', false);
+    this.set('sentTestEmail', true);
 
     var adminEmailLogsController = this;
     Discourse.ajax("/admin/email/test", {

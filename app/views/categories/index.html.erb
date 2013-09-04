@@ -1,12 +1,16 @@
+
+
 <% @list.categories.each do |c| %>
   <div class="category">
+  	<h1>tsestestsetsqsuy</h1>
     <h2><a href="/category/<%= c.slug.blank? ? c.id : c.slug %>"><%= c.name %></a></h2>
-    <div class="topic-list">
-      <%- if c.displayable_topics.present? %>
+	 <a href="<%#= c.relative_url %>"><%#= c.first_name %></a> <span name='<%#= c.first_name %>'></span><br/>
+      <div class="categories">
+      <% if c.displayable_topics.present? %>
         <% c.displayable_topics.each do |t| %>
-          <a href="<%= t.relative_url %>"><%= t.title %></a> <span title='<%= t 'posts' %>'>(<%= t.posts_count %>)</span><br/>
+          <a href="<%#= t.relative_url %>"><%= t.first_name %></a> <span name='<%= t 'first_name' %>'></span><br/>
         <% end %>
-      <%- end %>
+      <% end %>
     </div>
   </div>
 <% end %>
