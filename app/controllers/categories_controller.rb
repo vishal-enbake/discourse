@@ -49,7 +49,7 @@ class CategoriesController < ApplicationController
   end
   
   def connect_facebook
-    session[:oauth] = Koala::Facebook::OAuth.new('670651996278456','b1a66ee356054c8a77f2e5f5dd0f57ef', "#{request.protocol}#{request.host}/categories/get_fb_token/")
+    session[:oauth] = Koala::Facebook::OAuth.new(AppConfig.facebook['key'],AppConfig.facebook['secret'], "#{request.protocol}#{request.host}/categories/get_fb_token/")
     @auth_url = session[:oauth].url_for_oauth_code() 
     redirect_to @auth_url 
   end

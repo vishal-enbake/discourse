@@ -1,0 +1,13 @@
+common: &common
+  facebook:
+    key: '670651996278456'
+    secret : 'b1a66ee356054c8a77f2e5f5dd0f57ef'
+
+development:
+  <<: *common
+
+test:
+  <<: *common
+
+production:
+  <<: *common
